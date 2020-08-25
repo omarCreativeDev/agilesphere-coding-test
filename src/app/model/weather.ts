@@ -1,3 +1,14 @@
+export interface AppState {
+  weather: WeatherState;
+}
+
+export interface WeatherState {
+  error?: string;
+  loading?: boolean;
+  searchQuery: '';
+  summaries: Summary[];
+}
+
 export interface City {
   id: number;
   name: string;
@@ -62,4 +73,5 @@ export interface Weather {
 
 export interface Summary {
   city: string;
+  list: WeatherList[];
 }
