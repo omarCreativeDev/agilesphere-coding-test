@@ -1,20 +1,24 @@
-<table class="table">
-  <thead class="thead-dark">
-  <tr>
-    <th scope="col">City</th>
-    <th scope="col">6 AM</th>
-    <th scope="col">12 PM</th>
-    <th scope="col">6 PM</th>
-    <th scope="col">12 AM</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr>
-    <td scope="row">London</td>
-    <td scope="row">3 &deg;</td>
-    <td scope="row">12.5 &deg;</td>
-    <td scope="row">9 &deg;</td>
-    <td scope="row">2 &deg;</td>
-  </tr>
-  </tbody>
-</table>
+<ng-container *ngIf="summaries$ | async as summaries">
+  <table *ngIf="summaries.length; else noRecords" class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">City</th>
+        <th scope="col">6 AM</th>
+        <th scope="col">12 PM</th>
+        <th scope="col">6 PM</th>
+        <th scope="col">12 AM</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let i of summaries">
+        <td scope="row">{{ i.city }}</td>
+        <td scope="row">{{ i.list[3].main.temp }}&deg;</td>
+        <td scope="row">{{ i.list[5].main.temp }}&deg;</td>
+        <td scope="row">{{ i.list[7].main.temp }}&deg;</td>
+        <td scope="row">{{ i.list[1].main.temp }}&deg;</td>
+      </tr>
+    </tbody>
+  </table>
+</ng-container>
+
+<ng-template #noRecords><strong>No records to list.</strong></ng-template>
