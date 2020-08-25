@@ -6,4 +6,4 @@ import { Component } from '@angular/core';
   <app-search></app-search>
   <app-results></app-results>  `
 })
-export class WeatherContainer {}
+export class WeatherComponent {}

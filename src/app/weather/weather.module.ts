@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { WeatherEffects } from './store/effects/weather';
 import { weatherReducers } from './store/reducers/weather';
-import { WeatherContainer } from './weather.container';
+import { WeatherComponent } from './weather.component';
 import { WeatherService } from './weather.service';
 import { SearchComponent } from './components/search/search.component';
 import { ResultsComponent } from './components/results/results.component';
@@ -22,7 +22,7 @@ import { EffectsModule } from '@ngrx/effects';
   declarations: [
     SearchComponent,
     ResultsComponent,
-    WeatherContainer
+    WeatherComponent
   ],
   providers: [
     WeatherService
